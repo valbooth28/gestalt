@@ -25,6 +25,7 @@ type Props = {|
   crossOrigin?: 'anonymous' | 'use-credentials',
   children?: Node,
   controls?: boolean,
+  height?: number,
   loop?: boolean,
   onDurationChange?: ({|
     event: SyntheticEvent<HTMLVideoElement>,
@@ -61,6 +62,7 @@ type Props = {|
   preload: 'auto' | 'metadata' | 'none',
   src: Source,
   volume: number,
+  width?: number,
 |};
 
 type State = {|
@@ -514,6 +516,7 @@ export default class Video extends PureComponent<Props, State> {
       captions,
       children,
       crossOrigin,
+      height,
       loop,
       playing,
       playsInline,
@@ -521,6 +524,7 @@ export default class Video extends PureComponent<Props, State> {
       preload,
       src,
       volume,
+      width,
     } = this.props;
     const { currentTime, duration, fullscreen, captionsButton } = this.state;
 
@@ -535,6 +539,7 @@ export default class Video extends PureComponent<Props, State> {
         <ColorSchemeProvider id="Video" colorScheme="light">
           <video
             autoPlay={playing}
+            height={height}
             loop={loop}
             muted={volume === 0}
             playsInline={playsInline}
@@ -549,6 +554,7 @@ export default class Video extends PureComponent<Props, State> {
             onSeeked={this.handleSeek}
             onTimeUpdate={this.handleTimeUpdate}
             onProgress={this.handleProgress}
+            width={width}
             {...(crossOrigin ? { crossOrigin } : null)}
           >
             {Array.isArray(src) &&

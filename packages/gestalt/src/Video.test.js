@@ -96,3 +96,17 @@ test('Video with children', () => {
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Video with dimensions', () => {
+  const tree = create(
+    <Video
+      {...A11Y_LABELS}
+      aspectRatio={1}
+      captions="https://media.w3.org/2010/05/sintel/captions.vtt"
+      width={720}
+      height={1280}
+      src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+    />
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
+});
