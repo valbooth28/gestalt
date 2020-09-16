@@ -1,3 +1,15 @@
+## 13.9.0 (Sep 16, 2020)
+
+### Minor
+
+- Row, Stack: Update `children` type (#1216)
+
+## 13.8.0 (Sep 16, 2020)
+
+### Minor
+
+- Row, Stack: Second attempt to re-implement for better `gap` (#1214)
+
 ## 13.7.0 (Sep 15, 2020)
 
 ### Minor
