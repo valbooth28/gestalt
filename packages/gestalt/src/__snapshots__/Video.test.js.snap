@@ -352,7 +352,7 @@ exports[`Video with dimensions 1`] = `
   style={
     Object {
       "height": 0,
-      "paddingBottom": "100%",
+      "paddingBottom": "150%",
     }
   }
 >
